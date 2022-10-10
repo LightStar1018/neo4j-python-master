@@ -1,0 +1,4 @@
+data/raw_articles.csv
+__pycache__/
+.idea/
+_minted-report/

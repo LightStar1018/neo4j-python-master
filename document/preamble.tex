@@ -1,0 +1,103 @@
+
+%%%% Encodings
+
+\usepackage[utf8]{inputenc} % encoding
+\usepackage[english]{babel} % use special characters and also translates some elements within the document.
+
+%%%% Misc
+
+\usepackage{hyperref}       % Hyperlinks \url{url} or \href{url}{name}
+\usepackage{parskip}        % \par starts on left (not idented)
+\usepackage{tocbibind}      % Adds the bibliography to the table of contents (automatically)
+
+% \usepackage[document]{ragged2e}  % Left-aligned (whole document)
+% \begin{...} ... \end{...}   flushleft, flushright, center
+
+%%%% Abstract
+
+\usepackage{abstract}       % Abstract
+
+% http://www.ctex.org/documents/packages/special/abstract.pdf
+\renewcommand{\absnamepos}{flushleft} % \begin{abstract} \noindent ... \end{abstract}
+\setlength{\absleftindent}{0pt}
+\setlength{\absrightindent}{0pt}
+
+%%%% Graphics
+
+\usepackage{graphicx}
+\graphicspath{ {./figs/} } % directory to look up for graphics
+
+% \begin{figure}[h]
+%   \centering
+%   \includegraphics[scale=0.5]{cat}  % [width=\textwidth, height=4cm],
+%   \caption{Example of a cat}
+%   \label{fig:cat}
+% \end{figure}
+
+%%%% Math
+
+\usepackage{amsmath}        % Math
+\usepackage{amssymb}        % New symbols http://milde.users.sourceforge.net/LUCR/Math/mathpackages/amssymb-symbols.pdf
+\usepackage{bm}             % $\bm{D + C}$
+
+\usepackage{amsthm} % Math, \newtheorem, \proof, etc
+% \begin{theorem}\label{t:label}  ...  \end{theorem}
+% \begin{proof} ... \end{proof}
+\theoremstyle{plain} % default
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]  % Numering depends on the current section (instead of global)
+\newtheorem{lemma}[theorem]{Lemma} % Shares numeration with theorem.
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+% Defines a new environment to write your or claim - proof
+\newenvironment{claim}[1]{\par\noindent\underline{Claim:}\space#1}{}
+\newenvironment{claimproof}[1]{\par\noindent\underline{Proof:}\space#1}{\hfill $\blacksquare$}
+
+%%%% Code/Pseudo-code
+
+\usepackage{minted} % Code listing
+% \mint{html}|<h2>Something <b>here</b></h2>|
+% \inputminted{octave}{BitXorMatrix.m}
+
+%\begin{listing}[H]
+  %\begin{minted}[xleftmargin=20pt,linenos,bgcolor=codegray]{haskell}
+  %\end{minted}
+  %\caption{Example of a listing.}
+  %\label{lst:example} % You can reference it by \ref{lst:example}
+%\end{listing}
+
+\newcommand{\code}[1]{\texttt{#1}} % Define \code{foo.hs} environment
+
+\usepackage[vlined,ruled]{algorithm2e} % pseudo-code http://tug.ctan.org/macros/latex/contrib/algorithm2e/doc/algorithm2e.pdf
+
+%%%% Colors
+
+\usepackage{xcolor}         % Colours \definecolor, \color{codegray}
+\definecolor{codegray}{rgb}{0.9, 0.9, 0.9}
+% \color{codegray} ... ...
+% \textcolor{red}{easily}
+
+%%%% Math
+
+%\makeglossaries % before entries
+
+%\newglossaryentry{latex}{
+    %name=latex,
+    %description={Is a mark up language specially suited
+    %for scientific documents}
+%}
+
+% Referene to a glossary \gls{latex}
+% Print glossaries \printglossaries
+
+\usepackage[acronym]{glossaries} %
+
+% \acrshort{name}
+% \acrfull{name}
+% \newacronym{foo}{arcshort}{acrfull}
+
+\usepackage{enumitem} % \begin{enumerate}[label=(\alph*)]
+
